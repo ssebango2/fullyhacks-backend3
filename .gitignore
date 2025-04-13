@@ -14,6 +14,7 @@ env/
 *.cert
 credentials.json
 secrets/
+serviceAccountKey.json
 
 # IDE/Editor files
 .idea/
