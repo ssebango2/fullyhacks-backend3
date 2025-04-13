@@ -6,6 +6,10 @@ import json
 import re
 import os
 import time
+import select
+import gevent
+from gevent import monkey
+import websocket
 import numpy as np
 from collections import deque
 from textblob import TextBlob
@@ -878,6 +882,13 @@ def handle_audio(audio_data):
     else:
         print(f"No Deepgram connection for client {client_sid}")
         socketio.emit('error', {'message': "Deepgram connection not established"}, room=client_sid)
+
+def handle_audio(audio_data, sid):
+    # Modified function body that uses sid
+    if sid in client_connections:
+        ws = client_connections[sid]
+        ws.send(audio_data, opcode=websocket.ABNF.OPCODE_BINARY)
+
 
 @socketio.on('disconnect')
 def handle_disconnect():
