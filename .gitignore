@@ -1,0 +1,35 @@
+# Environment files
+.env
+.env.local
+.env*.local
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Secret files
+*.key
+*.pem
+*.cert
+credentials.json
+secrets/
+
+# IDE/Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build/cache files
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Logs and databases
+*.log
+*.sqlite3

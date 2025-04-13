@@ -471,6 +471,14 @@ def join_existing_discussion(discussion_id):
             
     return True
 
+def find_audio_file(filename, possible_dirs):
+    """Try to find an audio file in various directories"""
+    for directory in possible_dirs:
+        path = os.path.join(directory, filename)
+        if os.path.exists(path):
+            return path
+    return None
+
 if __name__ == "__main__":
     DEFAULT_AUDIO_DIR = os.path.join(os.path.expanduser("~"), "test_audio_files")
     
@@ -484,3 +492,105 @@ if __name__ == "__main__":
         "test_audio",
         "test_files"
     ]
+    
+    # Check server health first
+    try:
+        print(f"Checking server health at {SERVER_URL}...")
+        response = requests.get(f"{SERVER_URL}/api/health", timeout=5)
+        if response.status_code == 200:
+            print("✅ Server is healthy")
+        else:
+            print(f"❌ Server returned status code {response.status_code}")
+            print("Please ensure the server is running before running tests")
+            sys.exit(1)
+    except Exception as e:
+        print(f"❌ Server connection failed: {str(e)}")
+        print("Please ensure the server is running before running tests")
+        sys.exit(1)
+
+    # Parse command line arguments
+    if len(sys.argv) > 1:
+        command = sys.argv[1].lower()
+        
+        # Join existing discussion
+        if command == "join" and len(sys.argv) >= 3:
+            discussion_id = sys.argv[2]
+            join_existing_discussion(discussion_id)
+            sys.exit(0)
+            
+        # Basic audio test with provided file
+        elif command == "test" and len(sys.argv) >= 3:
+            audio_path = sys.argv[2]
+            if not os.path.exists(audio_path):
+                print(f"Audio file not found: {audio_path}")
+                sys.exit(1)
+            
+            print(f"Running basic audio test with: {audio_path}")
+            result = test_basic_audio(audio_path)
+            
+            if result:
+                print("\n✅ Basic audio test PASSED")
+                sys.exit(0)
+            else:
+                print("\n❌ Basic audio test FAILED")
+                sys.exit(1)
+                
+        # Wake word test with provided files
+        elif command == "wake" and len(sys.argv) >= 4:
+            initial_audio = sys.argv[2]
+            command_audio = sys.argv[3]
+            
+            if not os.path.exists(initial_audio):
+                print(f"Initial audio file not found: {initial_audio}")
+                sys.exit(1)
+                
+            if not os.path.exists(command_audio):
+                print(f"Command audio file not found: {command_audio}")
+                sys.exit(1)
+                
+            print(f"Running wake word test with:")
+            print(f"Initial audio: {initial_audio}")
+            print(f"Command audio: {command_audio}")
+            
+            result = test_wake_word(initial_audio, command_audio)
+            
+            if result:
+                print("\n✅ Wake word test PASSED")
+                sys.exit(0)
+            else:
+                print("\n❌ Wake word test FAILED")
+                sys.exit(1)
+    
+    # If no valid command provided, show usage
+    print("Audio Testing Utility")
+    print("=====================")
+    print("\nUsage:")
+    print("  python test_audio.py test <audio_file_path>")
+    print("  python test_audio.py wake <initial_audio_path> <command_audio_path>")
+    print("  python test_audio.py join <discussion_id>")
+    print("\nExamples:")
+    print("  python test_audio.py test ./audio_files/test_sample.wav")
+    print("  python test_audio.py wake ./audio_files/normal_speech.wav ./audio_files/wake_command.wav")
+    print("  python test_audio.py join -M1234567890")
+    
+    # Try to locate sample audio files
+    print("\nLooking for audio files in common locations...")
+    found_files = []
+    
+    for directory in possible_dirs:
+        if os.path.exists(directory):
+            audio_files = [f for f in os.listdir(directory) if f.endswith(('.wav', '.mp3', '.ogg'))]
+            if audio_files:
+                print(f"Found {len(audio_files)} audio file(s) in {directory}:")
+                for audio_file in audio_files[:5]:  # Show up to 5 files
+                    found_files.append(os.path.join(directory, audio_file))
+                    print(f"  - {audio_file}")
+                if len(audio_files) > 5:
+                    print(f"  - ... and {len(audio_files) - 5} more")
+                    
+    if found_files:
+        print("\nYou can run a test with one of these files:")
+        print(f"  python test_audio.py test {found_files[0]}")
+    else:
+        print("\nNo audio files found in common directories.")
+        print("Please specify the path to an audio file when running the test.")
