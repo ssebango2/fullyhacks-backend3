@@ -1,0 +1,11 @@
+flask==2.3.3
+firebase-admin==6.2.0
+deepgram-sdk==2.11.0
+python-socketio==5.8.0
+eventlet==0.33.3
+pyaudio==0.2.13
+pydub==0.25.1
+python-dotenv==1.0.0
+requests==2.31.0
+socketio-client==0.7.2
+numpy==1.24.3

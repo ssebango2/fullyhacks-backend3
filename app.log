@@ -1,0 +1,164 @@
+2025-04-12 22:13:12,131 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:13:12,132 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:13:12,134 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:13:12,154 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:13:12,161 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:13:12,480 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:13:12] "GET /socket.io/?transport=polling&EIO=4&t=1744521192.453513 HTTP/1.1" 200 -
+2025-04-12 22:13:12,488 - harmonai - INFO - Client connected: yp8F1kbnE2Npt12HAAAB
+2025-04-12 22:16:55,612 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:16:56,700 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:16:56,700 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:16:56,702 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:16:56,724 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:16:56,731 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:16:57,240 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:16:57] "GET /socket.io/?transport=polling&EIO=4&t=1744521417.2118368 HTTP/1.1" 200 -
+2025-04-12 22:16:57,247 - harmonai - INFO - Client connected: vn1QrOiFYrVMXroQAAAB
+2025-04-12 22:17:11,979 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:17:12,915 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:17:12,915 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:17:12,917 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:17:12,937 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:17:12,944 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:17:13,179 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:17:13] "GET /socket.io/?transport=polling&EIO=4&t=1744521433.172377 HTTP/1.1" 200 -
+2025-04-12 22:17:13,187 - harmonai - INFO - Client connected: 8wkr9NhDxOnhegjnAAAB
+2025-04-12 22:20:21,451 - harmonai - INFO - Client disconnected: 8wkr9NhDxOnhegjnAAAB
+2025-04-12 22:20:21,452 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:20:21] "GET /socket.io/?transport=websocket&EIO=4&sid=H-6umpUVUTUKQEGmAAAA&t=1744521433.181092 HTTP/1.1" 200 -
+2025-04-12 22:20:22,578 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:20:22] "GET /api/health HTTP/1.1" 200 -
+2025-04-12 22:20:56,472 - harmonai - ERROR - Error creating discussion: 400 Bad Request: Failed to decode JSON object: Extra data: line 3 column 1 (char 29)
+2025-04-12 22:20:56,473 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:20:56] "[35m[1mPOST /api/discussions HTTP/1.1[0m" 500 -
+2025-04-12 22:23:05,301 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/z.py', reloading
+2025-04-12 22:23:06,060 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:23:06,060 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:23:06,062 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:23:06,076 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:23:06,085 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:26:40,760 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:26:40,761 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:26:40,762 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:26:40,796 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.238:8080
+2025-04-12 22:26:40,796 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 22:26:40,796 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:26:41,165 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:26:41,165 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:26:41,166 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:26:41,176 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:26:41,181 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:26:53,018 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:26:53] "GET /api/health HTTP/1.1" 200 -
+2025-04-12 22:27:04,246 - harmonai - INFO - Created new discussion: -ONhbOHnkW7QNS8iEg32
+2025-04-12 22:27:04,249 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:27:04] "POST /api/discussions HTTP/1.1" 200 -
+2025-04-12 22:27:18,420 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:27:18] "GET /api/discussions HTTP/1.1" 200 -
+2025-04-12 22:29:31,379 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:29:31,479 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:29:32,084 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:29:32,084 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:29:32,085 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:29:32,099 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:29:32,105 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:30:15,952 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:30:16,015 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:30:16,535 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:30:16,535 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:30:16,536 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:30:16,549 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:30:16,554 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:30:37,338 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:30:37] "GET /api/health HTTP/1.1" 200 -
+2025-04-12 22:30:48,115 - harmonai - INFO - Created new discussion: -ONhcEwxTBJLOlDATXbS
+2025-04-12 22:30:48,117 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:30:48] "POST /api/discussions HTTP/1.1" 200 -
+2025-04-12 22:30:48,126 - harmonai - INFO - Client connected: Y8B3ibRyDP9wIMV3AAAB
+2025-04-12 22:30:48,128 - harmonai - INFO - Client Y8B3ibRyDP9wIMV3AAAB joined discussion -ONhcEwxTBJLOlDATXbS
+2025-04-12 22:32:24,860 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:32:24,944 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:32:25,455 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:32:25,456 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:32:25,457 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:32:25,476 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:32:25,481 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:32:26,390 - harmonai - INFO - Client connected: aVEejvfi-oEymN-DAAAB
+2025-04-12 22:34:12,372 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:34:12,459 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:34:13,059 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:34:13,059 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:34:13,060 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:34:13,077 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:34:13,084 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:34:13,151 - harmonai - INFO - Client connected: flSRr0gaS38emB0DAAAB
+2025-04-12 22:34:18,158 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:34:18,203 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:34:18,660 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:34:18,660 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:34:18,661 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:34:18,672 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:34:18,677 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:34:19,522 - harmonai - INFO - Client connected: i2CjJsR-Q-hK3l04AAAB
+2025-04-12 22:34:20,718 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:34:20,767 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:34:21,171 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:34:21,172 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:34:21,173 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:34:21,186 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:34:21,190 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:34:21,978 - harmonai - INFO - Client connected: LQPUZMGAztbrjaQMAAAB
+2025-04-12 22:34:22,210 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:34:22,264 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:34:22,637 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:34:22,637 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:34:22,639 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:34:22,650 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:34:22,654 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:34:23,196 - harmonai - INFO - Client connected: lCddZ5YIGFW0ea-JAAAB
+2025-04-12 22:34:23,678 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:34:23,737 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:34:24,097 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:34:24,097 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:34:24,098 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:34:24,109 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:34:24,113 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:34:25,047 - harmonai - INFO - Client connected: SzV-a4m_BTyf2dZZAAAB
+2025-04-12 22:35:42,524 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:35:42,598 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:35:43,113 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:35:43,113 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:35:43,114 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:35:43,125 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:35:43,132 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:35:43,806 - harmonai - INFO - Client connected: _oGQBG_ZXP9gRCpRAAAB
+2025-04-12 22:35:44,160 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/tests/test_audio.py', reloading
+2025-04-12 22:35:44,221 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:35:44,581 - harmonai - INFO - ✅ Firebase initialized successfully
+2025-04-12 22:35:44,581 - harmonai - INFO - ✅ Deepgram v3 initialized successfully
+2025-04-12 22:35:44,582 - harmonai - INFO - Starting server on port 8080
+2025-04-12 22:35:44,592 - werkzeug - WARNING -  * Debugger is active!
+2025-04-12 22:35:44,596 - werkzeug - INFO -  * Debugger PIN: 140-415-233
+2025-04-12 22:35:45,028 - harmonai - INFO - Client connected: mukF4Xf6pEGfyJR_AAAB
+2025-04-12 22:36:12,428 - harmonai - INFO - Created new discussion: -ONhdU79a7gFm1v_X5gc
+2025-04-12 22:36:12,430 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:36:12] "POST /api/discussions HTTP/1.1" 200 -
+2025-04-12 22:36:12,436 - harmonai - INFO - Client disconnected: mukF4Xf6pEGfyJR_AAAB
+2025-04-12 22:36:15,438 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:36:15] "[35m[1mGET /socket.io/?transport=websocket&EIO=4&t=1744522545.011583 HTTP/1.1[0m" 500 -
+2025-04-12 22:36:15,442 - werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "/Users/bkkim/fullyhacks/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "/Users/bkkim/fullyhacks/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 336, in execute
+    write(b"")
+  File "/Users/bkkim/fullyhacks/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 261, in write
+    assert status_set is not None, "write() before start_response"
+AssertionError: write() before start_response
+2025-04-12 22:36:16,450 - harmonai - INFO - Client connected: QI8btsOjKKNf5OubAAAD
+2025-04-12 22:36:16,452 - harmonai - WARNING - Invalid discussion ID in join request: -ONhdU79a7gFm1v_X5gc
+2025-04-12 22:36:17,465 - harmonai - WARNING - Invalid discussion ID in audio request: -ONhdU79a7gFm1v_X5gc
+2025-04-12 22:36:17,466 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2025 22:36:17] "[31m[1mPOST /api/audio HTTP/1.1[0m" 400 -
+2025-04-12 22:39:03,216 - werkzeug - INFO -  * Detected change in '/Users/bkkim/fullyhacks/src/app.py', reloading
+2025-04-12 22:39:03,301 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:39:15,147 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:39:33,160 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:40:07,336 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:40:24,583 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:41:42,532 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:42:05,494 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:42:12,148 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:42:15,767 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:45:54,443 - werkzeug - INFO -  * Restarting with stat
+2025-04-12 22:47:35,876 - werkzeug - INFO -  * Restarting with stat
