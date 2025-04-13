@@ -9,7 +9,7 @@ import time
 import numpy as np
 from collections import deque
 from textblob import TextBlob
-import openai
+from cerebras.cloud.sdk import Cerebras  # Import Cerebras SDK
 
 # Initialize Flask app and SocketIO once
 app = Flask(__name__)
@@ -20,8 +20,14 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 # Deepgram API token
 DEEPGRAM_API_KEY = '2c58905362fad7e1e6c13ba67357d31902a23409'
 
-# OpenAI API Key (replace with your own)
-openai.api_key = "your-openai-key-here"  # Replace with your actual key
+# Cerebras API Key (replace with your own)
+CEREBRAS_API_KEY = "csk-49jf3vxhyjfhjyvj5n62nxdt6mhv48k2rrhh65ww5vc4nmtk"  # Replace with your actual key
+
+# Initialize Cerebras client
+cerebras_client = Cerebras(api_key=CEREBRAS_API_KEY)
+
+# Default Cerebras model
+DEFAULT_MODEL = "llama-4-scout-17b-16e-instruct"  # Replace with your preferred model
 
 # WebSocket URL for Deepgram
 DEEPGRAM_WS_URL = "wss://api.deepgram.com/v1/listen?encoding=linear16&sample_rate=16000&channels=1"
@@ -189,14 +195,14 @@ def handle_transcription(transcription_data):
         'transcription': transcription
     }
 
-# ----------------- OpenAI Integration -----------------
+# ----------------- Cerebras AI Integration -----------------
 
 class AIResponseGenerator:
     """
-    Generate responses using OpenAI's API based on commands and conversation context
+    Generate responses using Cerebras AI's SDK based on commands and conversation context
     """
     def __init__(self):
-        self.model = "gpt-4"  # or "gpt-3.5-turbo" for a more cost-effective option
+        self.model = DEFAULT_MODEL
     
     def generate_response(self, command_type, parameters, conversation_history=None):
         """
@@ -208,19 +214,23 @@ class AIResponseGenerator:
         prompt = self._build_prompt(command_type, parameters, conversation_history)
         
         try:
-            response = openai.ChatCompletion.create(
-                model=self.model,
-                messages=[
-                    {"role": "system", "content": prompt["system"]},
-                    {"role": "user", "content": prompt["user"]}
-                ],
-                max_tokens=500,
-                temperature=0.7
+            # Call Cerebras API using the SDK
+            messages = [
+                {"role": "system", "content": prompt["system"]},
+                {"role": "user", "content": prompt["user"]}
+            ]
+            
+            response = cerebras_client.chat.completions.create(
+                messages=messages,
+                model=self.model
             )
+            
+            # Extract the response text
+            response_text = response.choices[0].message.content
             
             return {
                 "success": True,
-                "response": response.choices[0].message["content"],
+                "response": response_text,
                 "command_type": command_type,
                 "parameters": parameters
             }
@@ -314,12 +324,12 @@ class TranslationService:
     
     def translate_text(self, text, target_language):
         """
-        Translate text to the target language using OpenAI
+        Translate text to the target language using Cerebras
         """
         # Convert language name to code if needed
         target_code = self._get_language_code(target_language)
         
-        return translate_with_openai(text, target_language)
+        return translate_with_cerebras(text, target_language)
     
     def _get_language_code(self, language):
         """Convert language name to code if needed"""
@@ -335,26 +345,32 @@ class TranslationService:
         # If we can't find it, return as is
         return language
 
-# OpenAI translation helper
-def translate_with_openai(text, target_language):
-    """Use OpenAI to translate text"""
+# Cerebras translation helper
+def translate_with_cerebras(text, target_language):
+    """Use Cerebras to translate text"""
     system_prompt = f"You are a professional translator. Translate the following text to {target_language}. Provide only the translation, no explanations."
     
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # Using 3.5 for cost efficiency with translations
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": text}
-            ],
-            max_tokens=500,
+        # Create messages for translation
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": text}
+        ]
+        
+        # Call Cerebras API
+        response = cerebras_client.chat.completions.create(
+            messages=messages,
+            model=DEFAULT_MODEL,  # Using default model for translation
             temperature=0.3  # Lower temperature for more accurate translations
         )
+        
+        # Extract the translated text
+        translated_text = response.choices[0].message.content
         
         return {
             'success': True,
             'original_text': text,
-            'translated_text': response.choices[0].message["content"],
+            'translated_text': translated_text,
             'target_language': target_language
         }
         
@@ -547,7 +563,7 @@ class InterventionGenerator:
         return np.random.choice(templates)
     
     def generate_ai_intervention(self, intervention_type, conversation_history):
-        """Generate an AI-powered intervention using OpenAI"""
+        """Generate an AI-powered intervention using Cerebras"""
         conversation_text = "\n".join([f"Person {i%2 + 1}: {msg}" for i, msg in enumerate(conversation_history)])
         
         prompts = {
@@ -559,17 +575,22 @@ class InterventionGenerator:
         prompt = prompts.get(intervention_type, prompts["reflection"])
         
         try:
-            response = openai.ChatCompletion.create(
-                model="gpt-4",
-                messages=[
-                    {"role": "system", "content": "You are Harmon, a conversation assistant designed to improve communication."},
-                    {"role": "user", "content": f"{prompt}\n\n{conversation_text}"}
-                ],
-                max_tokens=150,
-                temperature=0.7
+            # Create messages for the intervention generation
+            messages = [
+                {"role": "system", "content": "You are Harmon, a conversation assistant designed to improve communication."},
+                {"role": "user", "content": f"{prompt}\n\n{conversation_text}"}
+            ]
+            
+            # Call Cerebras API
+            response = cerebras_client.chat.completions.create(
+                messages=messages,
+                model=DEFAULT_MODEL
             )
             
-            return response.choices[0].message["content"]
+            # Extract the intervention text
+            intervention_text = response.choices[0].message.content
+            
+            return intervention_text
             
         except Exception as e:
             # Fall back to template-based intervention if AI fails
@@ -675,7 +696,7 @@ def connect_to_deepgram(client_sid):
                             if command_result['command_type'] == 'translate':
                                 # Handle translation
                                 params = command_result['parameters']
-                                translation_result = translate_with_openai(
+                                translation_result = translate_with_cerebras(
                                     params.get('content', ''), 
                                     params.get('target_language', 'spanish')
                                 )
@@ -804,7 +825,7 @@ def translate_endpoint():
     if not text:
         return jsonify({'error': 'No text provided'}), 400
     
-    result = translate_with_openai(text, target_language)
+    result = translate_with_cerebras(text, target_language)
     return jsonify(result)
 
 @app.route('/api/analyze_emotion', methods=['POST'])
